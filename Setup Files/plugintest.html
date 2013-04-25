@@ -1,0 +1,104 @@
+
+<!-- saved from url=(0044)file:///C:/install/Downloads/plugintest.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script>
+function $(name){
+	return document.getElementById(name)
+}
+</script>
+</head>
+<body>
+<div id="pluginDiv"><object id="officeDrivePluginObject" type="application/x-officedrive" width="1" height="1" onload="jsOfficeDrivePlugin.pluginOnLoad()"><param name="onload" value="pluginCallback"></object></div>
+<script>
+var pluginCallback = null
+var jsOfficeDrivePlugin = function(onload){
+	this.name = 'jsOfficeDrivePlugin'
+	this.plugin = null
+	this.div = null
+
+	this.pluginLoaded = null
+	this.pluginValid = false
+	this.pluginAlive = false
+	this.pluginCallbackTestPassed = false
+
+	this.onload = null
+
+	this.init = function(onload){
+		if(onload) this.onload = onload
+
+		this.div = $('pluginDiv')
+		this.div.innerHTML = '<object id="officeDrivePluginObject" type="application/x-officedrive" width="1" height="1" onload="'+this.name+'.pluginOnLoad()"><param name="onload" value="pluginCallback" /></object>'
+		pluginCallback = (function(){
+			this.pluginLoaded = true
+			console.log('pluginCallback from onload event is called')
+
+			if(!this.getPlugin().valid) console.error('plugin not valid')
+			else{
+				console.log('valid property found')
+				if(!this.getPlugin().echo('hello world') == 'hello world'){
+					this.pluginValid = false
+					console.error('hello world test failed')
+				}
+				else{
+					console.log('echo test success')
+					var callback = (function(){
+						this.pluginValid = true
+						console.log('all plugin tests successfully run!')
+						if(this.onload) this.onload()
+					}).bind(this)
+					if(0 && !this.getPlugin().callbackTest(callback)){
+						this.pluginValid = false
+						console.error('callbackTest failed')
+					}
+					else console.log('callbackTest ran')
+				}
+			}
+		}).bind(this)
+	}
+
+	this.getPlugin = (function(){
+		if(this.plugin) return this.plugin
+		this.plugin = $('officeDrivePluginObject')
+		return this.plugin
+	}).bind(this)
+
+	this.launchFileSelect = function(fileType, multiple, fileOperation, title, filter, callback){
+		if(fileType < 1 || fileType > 3) console.error('invalid fileType value')
+		else if(fileOperation < 1 || fileOperation > 2) console.error('invalid fileOperation value')
+
+		multiple = multiple ? true : false
+		title = title || typeof(title) == 'string' && title ? title : (fileOperation == 1 ? 'open' : 'save')
+		if(!callback || typeof(callback) != 'method') callback = function(path){console.log(path)}
+
+		var func = (function(){
+			var pluginCallback = (function(path){
+				callback(path)
+			}).bind(this)
+
+			this.getPlugin().launchFileSelect(fileType, multiple, fileOperation, title, filter, pluginCallback)
+		}).bind(this)
+
+		if(this.pluginAlive){
+			// plugin is alive
+			func()
+		}
+		else{
+			// plugin must be initated with onload callback
+			console.log('start plugin')
+			this.init(func)
+		}
+	}
+}
+var officeDrivePlugin = new jsOfficeDrivePlugin()
+officeDrivePlugin.init()
+p = officeDrivePlugin.getPlugin()
+
+callback = function(path){console.log(path)}
+//callback = function(buffer){var rawBytes = new Uint8Array(buffer); console.log(rawBytes)}
+
+p.launchFileSelect(2, 1, 1, callback)
+
+</script>
+
+
+</body></html>

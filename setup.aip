@@ -69,7 +69,7 @@
     <ROW File="npOfficeDrive.so.dll" Component_="npOfficeDrive.so.dll" FileName="npOffi~1.dll|npOfficeDrive.so.dll" Version="65535.65535.65535.65535" Attributes="1" SourcePath="..\..\..\..\home\simon\src\firebreath-dev\build\bin\OfficeDrive\debug\npOfficeDrive.so.dll" SelfReg="true" NextFile="client.jar" DigSign="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" PackageType="1" ExeIconPath="..\..\..\..\install\Downloads\icon officedrive light beveled.ico" ExtUI="true" UseLargeSchema="true" UACExecutionLevel="1"/>
     <ROW BuildKey="Win32_Debug" BuildName="Win32_Debug" BuildOrder="2" BuildType="0" PackageFolder="Win32_DebugSetupFiles" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true"/>
     <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
   </COMPONENT>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DOCUMENT Type="Advanced Installer" CreateVersion="10.0" version="10.0" Modules="professional" RootPath="." Language="en" Id="{A457D0B5-45B9-4824-B7E6-DBF83A100EC5}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="UpdaterComponent;SerValComponent;MsiExtComponent;MsiAssemblyComponent;MsiServInstComponent;MsiOrgComponent;ActSyncAppComponent;BackgroundImagesComponent;DictionaryComponent;CPLAppletComponent;MsiClassComponent;WebApplicationsComponent;MsiOdbcDataSrcComponent;MsiAppSearchComponent;MsiInstExSeqComponent"/>
+    <ROW Name="HiddenItems" Value="UpdaterComponent;SerValComponent;MsiExtComponent;MsiAssemblyComponent;MsiServInstComponent;MsiOrgComponent;ActSyncAppComponent;BackgroundImagesComponent;DictionaryComponent;CPLAppletComponent;WebApplicationsComponent;MsiOdbcDataSrcComponent;MsiAppSearchComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui#Win32_Debug:aiui"/>
@@ -106,6 +106,9 @@
     <ROW Action="AI_XmlRollback" Description="Rolling back XML file configurations." Template="Rolling back XML file configurations." DescriptionLocId="ActionText.Description.AI_XmlRollback" TemplateLocId="ActionText.Template.AI_XmlRollback"/>
     <ROW Action="AI_XmlUninstall" Description="Generating actions to configure XML files" DescriptionLocId="ActionText.Description.AI_XmlUninstall"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppIdComponent">
+    <ROW AppId="{E4C358F5-E5C0-4B49-8BAF-53F256F779F1}" ActivateAtStorage="0" RunAsInteractiveUser="0"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
     <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="Win32_Debug"/>
     <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="Win32_Debug"/>
@@ -116,6 +119,12 @@
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
     <ROW Name="xmlCfg.dll" SourcePath="&lt;AI_CUSTACTS&gt;xmlCfg.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiClassComponent">
+    <ROW CLSID="{E4C358F5-E5C0-4B49-8BAF-53F256F779F1}" Context="LocalServer32" Component_="npOfficeDrive.so.dll" AppId_="{E4C358F5-E5C0-4B49-8BAF-53F256F779F1}" Feature_="MainFeature" Attributes="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiComPlusComponent">
+    <ROW Component_="npOfficeDrive.so.dll" ExpType="65"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
     <ROW Dialog_="FolderDlg" Control="FolderDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>

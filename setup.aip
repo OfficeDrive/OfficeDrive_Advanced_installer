@@ -63,8 +63,8 @@
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="OfficeDrive.ddf" Component_="javawebsock.cmd" FileName="Office~1.ddf|OfficeDrive.ddf" Attributes="0" SourcePath="OfficeDrive.ddf" SelfReg="false" NextFile="OfficeDriveInstaller.wxs"/>
-    <ROW File="OfficeDriveInstaller.wxs" Component_="javawebsock.cmd" FileName="Office~1.wxs|OfficeDriveInstaller.wxs" Attributes="0" SourcePath="OfficeDriveInstaller.wxs" SelfReg="false"/>
+    <ROW File="OfficeDrive.ddf" Component_="javawebsock.cmd" FileName="Office~1.ddf|OfficeDrive.ddf" Attributes="0" SourcePath="OfficeDrive.ddf" SelfReg="false" NextFile="OfficeDriveInstaller.wxs" DigSign="true"/>
+    <ROW File="OfficeDriveInstaller.wxs" Component_="javawebsock.cmd" FileName="Office~1.wxs|OfficeDriveInstaller.wxs" Attributes="0" SourcePath="OfficeDriveInstaller.wxs" SelfReg="false" DigSign="true"/>
     <ROW File="client.jar" Component_="javawebsock.cmd" FileName="Office~1|OfficeDriveClient" Attributes="1" SourcePath="..\..\Downloads\OfficeDriveClient.jar" SelfReg="false" NextFile="OfficeDrive.ddf" DigSign="true"/>
     <ROW File="npOfficeDrive.so.dll" Component_="npOfficeDrive.so.dll" FileName="npOffi~1.dll|npOfficeDrive.so.dll" Attributes="1" SourcePath="..\..\..\..\home\simon\src\firebreath-dev\build\bin\OfficeDrive\debug\npOfficeDrive.so.dll" SelfReg="false" NextFile="client.jar" DigSign="true"/>
   </COMPONENT>
@@ -78,7 +78,7 @@
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
-    <ROW TimeStampUrl="http://timestamp.verisign.com/scripts/timstamp.dll" SignOptions="0" SignTool="0"/>
+    <ROW DigitalCertificate="..\..\Downloads\code signing cert simon 2.pfx" TimeStampUrl="http://timestamp.verisign.com/scripts/timstamp.dll" SignOptions="0" SignTool="0" EnableLUAPatching="1" Password="7099B7A4D193EB035D80F553EF42"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
@@ -197,8 +197,8 @@
     <ROW Name="iconofficedrivelightbeveled_1.exe" SourcePath="..\..\..\..\install\Downloads\icon officedrive light beveled.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIniFileComponent">
-    <ROW IniFile="AdvancedINF" FileName="Office~1.inf|OfficeDrive.inf" DirProperty="OfficeDrive_Dir" Section="version" Key="AdvancedINF" Value="2.0" Action="0" Component_="npOfficeDrive.so.dll"/>
-    <ROW IniFile="Signature" FileName="Office~1.inf|OfficeDrive.inf" DirProperty="OfficeDrive_Dir" Section="version" Key="Signature" Value="&quot;$CHICAGO$&quot;" Action="0" Component_="npOfficeDrive.so.dll"/>
+    <ROW IniFile="AdvancedINF" FileName="Office~1.inf|OfficeDrive.inf" DirProperty="OfficeDrive_Dir" Section="1.0.0.0" Key="AdvancedINF" Value="2.0" Action="0" Component_="npOfficeDrive.so.dll"/>
+    <ROW IniFile="Signature" FileName="Office~1.inf|OfficeDrive.inf" DirProperty="OfficeDrive_Dir" Section="1.0.0.0" Key="Signature" Value="&quot;$CHICAGO$&quot;" Action="0" Component_="npOfficeDrive.so.dll"/>
     <ROW IniFile="hook1" FileName="Office~1.inf|OfficeDrive.inf" DirProperty="OfficeDrive_Dir" Section="Setup Hooks" Key="hook1" Value="hook1" Action="0" Component_="npOfficeDrive.so.dll"/>
     <ROW IniFile="run" FileName="Office~1.inf|OfficeDrive.inf" DirProperty="OfficeDrive_Dir" Section="hook1" Key="run" Value="&quot;%EXTRACT_DIR%\$[\{]PROJECT_NAME[\}].exe&quot;" Action="0" Component_="npOfficeDrive.so.dll"/>
   </COMPONENT>

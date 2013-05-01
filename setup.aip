@@ -35,7 +35,8 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="Common~1|CommonAppDataFolder" IsPseudoRoot="1"/>
-    <ROW Directory="OfficeDrive_Dir" Directory_Parent="ProgramFilesFolder" DefaultDir="Office~1|OfficeDrive"/>
+    <ROW Directory="LocalAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="LocalA~1|LocalAppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="OfficeDrive_Dir" Directory_Parent="LocalAppDataFolder" DefaultDir="Office~1|OfficeDrive"/>
     <ROW Directory="ProgramFilesFolder" Directory_Parent="TARGETDIR" DefaultDir="Progra~1|ProgramFilesFolder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="dist_Dir" Directory_Parent="OfficeDrive_Dir" DefaultDir="dist"/>
@@ -259,7 +260,7 @@
     <ROW Registry="NoModify" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoModify" Value="#1" Component_="AI_DisableModify"/>
     <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName"/>
     <ROW Registry="OfficeDrive" Root="1" Key="Software\Microsoft\Windows\CurrentVersion\Run" Name="OfficeDrive" Value="javaw.exe -jar [#client.jar]" Component_="OfficeDrive"/>
-    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[OfficeDrive_Dir]" Component_="ProductInformation"/>
     <ROW Registry="Path_1" Root="-1" Key="Software\MozillaPlugins\@officedrive.net/OfficeDrive;version=1" Name="Path" Value="[#npOfficeDrive.so.dll]" Component_="Path"/>
     <ROW Registry="ProductName_1" Root="-1" Key="Software\MozillaPlugins\@officedrive.net/OfficeDrive;version=1" Name="ProductName" Value="OfficeDrive Plugin" Component_="ProductName"/>
     <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>

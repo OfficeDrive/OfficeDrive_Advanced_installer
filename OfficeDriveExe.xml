@@ -1,7 +1,7 @@
 <launch4jConfig>
-  <dontWrapJar>false</dontWrapJar>
+  <dontWrapJar>true</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\Administrator\Documents\OfficeDrive_Advanced_installer\OfficeDriveClient.jar</jar>
+  <jar>OfficeDriveClient.jar</jar>
   <outfile>C:\Users\Administrator\Documents\OfficeDrive_Advanced_installer\OfficeDriveClient.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>

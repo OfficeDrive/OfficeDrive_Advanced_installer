@@ -1,31 +1,21 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <obj>w32api/crt2.o</obj>
-  <obj>head/guihead.o</obj>
-  <obj>head/head.o</obj>
-  <lib>w32api/libmingw32.a</lib>
-  <lib>w32api/libgcc.a</lib>
-  <lib>w32api/libmsvcrt.a</lib>
-  <lib>w32api/libkernel32.a</lib>
-  <lib>w32api/libuser32.a</lib>
-  <lib>w32api/libadvapi32.a</lib>
-  <lib>w32api/libshell32.a</lib>
-  <jar>C:\Users\simon\Downloads\OfficeDriveClient (1).jar</jar>
-  <outfile>C:\Users\simon\Downloads\OfficeDriveClient.exe</outfile>
+  <jar>C:\Users\Administrator\Documents\OfficeDrive_Advanced_installer\OfficeDriveClient.jar</jar>
+  <outfile>C:\Users\Administrator\Documents\OfficeDrive_Advanced_installer\OfficeDriveClient.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
-  <chdir></chdir>
+  <chdir>%LOCALAPPDATA%\OfficeDrive</chdir>
   <priority>normal</priority>
   <downloadUrl>http://java.com/download</downloadUrl>
   <supportUrl></supportUrl>
-  <customProcName>true</customProcName>
-  <stayAlive>true</stayAlive>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
   <manifest></manifest>
   <icon>C:\home\simon\src\firebreath-dev\projects\officedrive\logo officedrive light beveled64.ico</icon>
   <singleInstance>
-    <mutexName>OfficeDriveClient</mutexName>
-    <windowTitle>OfficeDrive</windowTitle>
+    <mutexName>OfficeDrive browser plugin</mutexName>
+    <windowTitle>OfficeDrive browser plugin</windowTitle>
   </singleInstance>
   <jre>
     <path></path>

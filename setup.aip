@@ -259,7 +259,7 @@
     <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /I [ProductCode]" Component_="AI_CustomARPName"/>
     <ROW Registry="NoModify" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoModify" Value="#1" Component_="AI_DisableModify"/>
     <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName"/>
-    <ROW Registry="OfficeDrive" Root="1" Key="Software\Microsoft\Windows\CurrentVersion\Run" Name="OfficeDrive" Value="javaw.exe -jar [#client.jar]" Component_="OfficeDrive"/>
+    <ROW Registry="OfficeDrive" Root="1" Key="Software\Microsoft\Windows\CurrentVersion\Run" Name="OfficeDrive" Value="[#OfficeDriveClient.exe]" Component_="OfficeDrive"/>
     <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[OfficeDrive_Dir]" Component_="ProductInformation"/>
     <ROW Registry="Path_1" Root="-1" Key="Software\MozillaPlugins\@officedrive.net/OfficeDrive;version=1" Name="Path" Value="[#npOfficeDrive.so.dll]" Component_="Path"/>
     <ROW Registry="ProductName_1" Root="-1" Key="Software\MozillaPlugins\@officedrive.net/OfficeDrive;version=1" Name="ProductName" Value="OfficeDrive Plugin" Component_="ProductName"/>

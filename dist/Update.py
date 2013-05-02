@@ -6,7 +6,7 @@ jar = "OfficeDriveClient.jar"
 odPath = os.path.join(os.environ.get("LOCALAPPDATA",""), "OfficeDrive")
 localJarPath = os.path.join(odPath, jar)
 pidFile = os.path.join(odPath, "pidfile")
-
+pid = 0
 updateUrl = "https://websockettest.officedrive.net/plugin/OfficeDriveClient.jar"
 
 if len(sys.argv) > 1:

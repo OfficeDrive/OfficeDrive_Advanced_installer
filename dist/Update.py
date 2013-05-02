@@ -60,7 +60,7 @@ if cmd.returncode:
 else:
     sys.stdout.write("update of %s completed.\n"  %localJarPath)
 	
-# sys.exit(0)
+sys.exit(0)
 
     
 

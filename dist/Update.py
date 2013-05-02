@@ -7,11 +7,19 @@ odPath = os.path.join(os.environ.get("LOCALAPPDATA",""), "OfficeDrive")
 localJarPath = os.path.join(odPath, jar)
 pidFile = os.path.join(odPath, "pidfile")
 pid = 0
+codeBase = "https://websockettest.officedrive.net/#codeBase"
 updateUrl = "https://websockettest.officedrive.net/plugin/OfficeDriveClient.jar"
 
-if len(sys.argv) > 1:
-	updateUrl = sys.argv[1]
 
+if len(sys.argv) > 1:
+	codeBase = sys.argv[1]
+	protocol, sep, hostName = codeBase.split("/")[0:3]
+	if protocol.startswith("http"):
+	    updateUrl = "%s//%s/plugin/OfficeDriveClient.jar" %(protocol, hostName)
+	else:
+		updateUrl = "https://websockettest.officedrive.net/plugin/OfficeDriveClient.jar"
+		
+	
 try:
     pid = open(pidFile, "r").read()
 except (IOError):
@@ -47,10 +55,10 @@ for l in out:
     sys.stdout.write(l)
 
 if cmd.returncode:
-	sys.stdout.write("exitcode: %d - fail!\n" %cmd.exitcode)
+	sys.stdout.write("exitcode: %d - fail!\n" %cmd.returncode)
 # 	sys.exit(-1)
 else:
-    sys.stdout.write("updat of %s completed.\n"  %localJarPath)
+    sys.stdout.write("update of %s completed.\n"  %localJarPath)
 	
 # sys.exit(0)
 

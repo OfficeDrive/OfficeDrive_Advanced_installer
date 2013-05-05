@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="10.0" version="10.0" Modules="professional" RootPath="." Language="en" Id="{A457D0B5-45B9-4824-B7E6-DBF83A100EC5}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="10.0" version="10.1" Modules="professional" RootPath="." Language="en" Id="{A457D0B5-45B9-4824-B7E6-DBF83A100EC5}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="UpdaterComponent;SerValComponent;MsiServInstComponent;MsiOrgComponent;ActSyncAppComponent;BackgroundImagesComponent;DictionaryComponent;CPLAppletComponent;WebApplicationsComponent;MsiOdbcDataSrcComponent;MsiAppSearchComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
-    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui#Win32_Debug:aiui"/>
+    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui#Win32_Debug:aiui#DefaultBuild_1:aiui"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_PRODUCTNAME_ARP" Value="[|ProductName]"/>
-    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:style21" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:style21#DefaultBuild_1:style21" MsiKey="AI_ThemeStyle"/>
     <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
-    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:"/>
+    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:#DefaultBuild_1:"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPHELPLINK" Value="http://www.officedrive.net/support"/>
     <ROW Property="ARPNOMODIFY" Value="1"/>
@@ -18,19 +19,19 @@
     <ROW Property="ARPURLINFOABOUT" Value="http://www.officedrive.net"/>
     <ROW Property="ARPURLUPDATEINFO" Value="https://www.officedrive.net/update"/>
     <ROW Property="CTRLS" Value="2"/>
-    <ROW Property="LIMITUI" Value="1" MultiBuildValue="DefaultBuild:"/>
-    <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="LIMITUI" Value="1" MultiBuildValue="DefaultBuild:#DefaultBuild_1:"/>
+    <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:1#DefaultBuild_1:1"/>
     <ROW Property="Manufacturer" Value="OfficeDrive.net"/>
-    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:v"/>
+    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:v#DefaultBuild_1:v"/>
     <ROW Property="ProductCode" Value="1033:{E4C358F5-E5C0-4B49-8BAF-53F256F779F1} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="OfficeDrive browser plugin"/>
     <ROW Property="ProductVersion" Value="1.0.0.1" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
-    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{97A6B370-9AEA-4996-A830-F8D9F45D2A43}"/>
-    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME" ValueLocId="-"/>
-    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME#DefaultBuild_1:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME#DefaultBuild_1:Windows 9x/ME" ValueLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
@@ -39,12 +40,12 @@
     <ROW Directory="OfficeDrive_Dir" Directory_Parent="LocalAppDataFolder" DefaultDir="Office~1|OfficeDrive"/>
     <ROW Directory="ProgramFilesFolder" Directory_Parent="TARGETDIR" DefaultDir="Progra~1|ProgramFilesFolder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
-    <ROW Directory="dist_Dir" Directory_Parent="OfficeDrive_Dir" DefaultDir="dist"/>
     <ROW Directory="regid.201302.net.officedrive_Dir" Directory_Parent="CommonAppDataFolder" DefaultDir="regid2~1.off|regid.2013-02.net.officedrive"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AI_CustomARPName" ComponentId="{7E93E0C6-2A11-4853-9D8C-1E3C7496D89E}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{0F8E0D88-1995-4FF1-80F4-8CE003060081}" Directory_="APPDIR" Attributes="4" KeyPath="NoModify" Options="1"/>
+    <ROW Component="AI_ExePath" ComponentId="{BE5E8AFA-D9E6-4738-8049-96F9D1FDA73B}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F02EC9CF-0259-48D8-A3BB-85BEBB119125}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="Description" ComponentId="{9E4007D0-ED29-44A4-8095-5313880C430B}" Directory_="APPDIR" Attributes="4" KeyPath="Description"/>
     <ROW Component="MimeTypes" ComponentId="{EBFC58BD-EC71-40EA-8A3D-4E072A07174E}" Directory_="APPDIR" Attributes="4" KeyPath="MimeTypes"/>
@@ -53,57 +54,29 @@
     <ROW Component="Path" ComponentId="{C68C92E9-A498-4490-A2E8-D8B4AF9A4AFD}" Directory_="APPDIR" Attributes="4" KeyPath="Path_1"/>
     <ROW Component="ProductInformation" ComponentId="{3A9ECA09-571E-47D6-B04F-738D648C5567}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
     <ROW Component="ProductName" ComponentId="{6A5C06D4-0B86-422C-B8EE-D3A33E206720}" Directory_="APPDIR" Attributes="4" KeyPath="ProductName_1"/>
-    <ROW Component="Update.exe" ComponentId="{0EC21010-082A-4749-929B-086C44255736}" Directory_="OfficeDrive_Dir" Attributes="0" KeyPath="Update.exe"/>
-    <ROW Component="Update.exe_1" ComponentId="{3D22FE62-1707-411B-966B-7060B3AEB89D}" Directory_="dist_Dir" Attributes="0" KeyPath="Update.exe_1"/>
     <ROW Component="Vendor" ComponentId="{892FE1BE-5925-4907-B2B3-F25D9710E78B}" Directory_="APPDIR" Attributes="4" KeyPath="Vendor"/>
     <ROW Component="Version" ComponentId="{69C30C20-3F46-47FC-A3CC-5ABA09DE060D}" Directory_="APPDIR" Attributes="4" KeyPath="Version_1"/>
     <ROW Component="applicationxOfficeDrive" ComponentId="{C251C7CB-597D-43D6-8C5A-759FB2F1B8F4}" Directory_="APPDIR" Attributes="4" KeyPath="applicationxOfficeDrive"/>
-    <ROW Component="bz2.pyd" ComponentId="{4F7F8D7B-6A97-4BED-848D-5F066F566F05}" Directory_="dist_Dir" Attributes="0" KeyPath="bz2.pyd" Type="0"/>
-    <ROW Component="curl.exe" ComponentId="{2C9EA374-5EF2-4622-874C-96C3697C29E4}" Directory_="dist_Dir" Attributes="0" KeyPath="curl.exe"/>
     <ROW Component="javawebsock.cmd" ComponentId="{E068C39B-C065-43DE-8A05-29D5FB783176}" Directory_="OfficeDrive_Dir" Attributes="0" KeyPath="client.jar" Type="0"/>
-    <ROW Component="kill.exe" ComponentId="{49D86192-EAD9-438D-AAC9-DF64E391CA86}" Directory_="dist_Dir" Attributes="0" KeyPath="kill.exe"/>
-    <ROW Component="libcrypto.dll" ComponentId="{95361F51-1ADD-4473-8D21-8D7B054FDE07}" Directory_="dist_Dir" Attributes="0" KeyPath="libcrypto.dll"/>
-    <ROW Component="libcurl4.dll" ComponentId="{0A8DFED7-F3B7-4398-B9C2-6418A3D3EC0D}" Directory_="dist_Dir" Attributes="0" KeyPath="libcurl4.dll"/>
-    <ROW Component="libssl.dll" ComponentId="{5F904836-26FD-4002-9D91-510923B1A8C3}" Directory_="dist_Dir" Attributes="0" KeyPath="libssl.dll"/>
     <ROW Component="npOfficeDrive.so.dll" ComponentId="{9F39716D-0418-4794-927A-06C1D8DF0894}" Directory_="OfficeDrive_Dir" Attributes="0" KeyPath="npOfficeDrive.so.dll"/>
-    <ROW Component="python27.dll" ComponentId="{BEA3094D-0FC4-427F-8597-712DA9EA487B}" Directory_="dist_Dir" Attributes="0" KeyPath="python27.dll"/>
     <ROW Component="regid.201302.net.officedrive" ComponentId="{24CAB0A3-4973-4C1F-88E9-E777CBA2F3A0}" Directory_="regid.201302.net.officedrive_Dir" Attributes="0"/>
-    <ROW Component="w9xpopen.exe" ComponentId="{431ED6BD-9C0F-4FC9-88D7-661BDEEFAE5B}" Directory_="dist_Dir" Attributes="0" KeyPath="w9xpopen.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="Feature" Title="Feature" Description="Description" Display="3" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_DisableModify"/>
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_DisableModify APPDIR Description MimeTypes OfficeDrive OfficeDriveClient.exe Path ProductInformation ProductName Update.exe Update.exe_1 Vendor Version applicationxOfficeDrive bz2.pyd curl.exe javawebsock.cmd kill.exe libcrypto.dll libcurl4.dll libssl.dll npOfficeDrive.so.dll python27.dll regid.201302.net.officedrive w9xpopen.exe"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_DisableModify AI_ExePath APPDIR Description MimeTypes OfficeDrive OfficeDriveClient.exe Path ProductInformation ProductName Vendor Version applicationxOfficeDrive javawebsock.cmd npOfficeDrive.so.dll regid.201302.net.officedrive"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="OfficeDrive.ddf" Component_="javawebsock.cmd" FileName="Office~1.ddf|OfficeDrive.ddf" Attributes="0" SourcePath="OfficeDrive.ddf" SelfReg="false" NextFile="OfficeDriveInstaller.wxs"/>
     <ROW File="OfficeDriveClient.exe" Component_="OfficeDriveClient.exe" FileName="Office~1.exe|OfficeDriveClient.exe" Attributes="0" SourcePath="OfficeDriveClient.exe" SelfReg="false" DigSign="true"/>
     <ROW File="OfficeDriveInstaller.wxs" Component_="javawebsock.cmd" FileName="Office~1.wxs|OfficeDriveInstaller.wxs" Attributes="0" SourcePath="OfficeDriveInstaller.wxs" SelfReg="false" NextFile="OfficeDriveLauncher.cmd"/>
-    <ROW File="OfficeDriveLauncher.cmd" Component_="javawebsock.cmd" FileName="Office~1.cmd|OfficeDriveLauncher.cmd" Attributes="0" SourcePath="OfficeDriveLauncher.cmd" SelfReg="false" NextFile="Update.exe"/>
-    <ROW File="Setup.py" Component_="bz2.pyd" FileName="Setup.py" Attributes="0" SourcePath="dist\Setup.py" SelfReg="false" NextFile="libssl.dll"/>
-    <ROW File="Update.exe" Component_="Update.exe" FileName="Update.exe" Attributes="0" SourcePath="dist\dist\Update.exe" SelfReg="false" NextFile="bz2.pyd" DigSign="true"/>
-    <ROW File="Update.exe_1" Component_="Update.exe_1" FileName="Update.exe" Attributes="0" SourcePath="dist\dist\Update.exe" SelfReg="false" NextFile="w9xpopen.exe" DigSign="true"/>
-    <ROW File="Update.py" Component_="bz2.pyd" FileName="Update.py" Attributes="0" SourcePath="dist\Update.py" SelfReg="false" NextFile="Setup.py"/>
-    <ROW File="_ctypes.pyd" Component_="bz2.pyd" FileName="_ctypes.pyd" Attributes="0" SourcePath="dist\dist\_ctypes.pyd" SelfReg="false" NextFile="_hashlib.pyd"/>
-    <ROW File="_hashlib.pyd" Component_="bz2.pyd" FileName="_hashlib.pyd" Attributes="0" SourcePath="dist\dist\_hashlib.pyd" SelfReg="false" NextFile="_socket.pyd"/>
-    <ROW File="_socket.pyd" Component_="bz2.pyd" FileName="_socket.pyd" Attributes="0" SourcePath="dist\dist\_socket.pyd" SelfReg="false" NextFile="_ssl.pyd"/>
-    <ROW File="_ssl.pyd" Component_="bz2.pyd" FileName="_ssl.pyd" Attributes="0" SourcePath="dist\dist\_ssl.pyd" SelfReg="false" NextFile="Update.py"/>
-    <ROW File="bz2.pyd" Component_="bz2.pyd" FileName="bz2.pyd" Attributes="0" SourcePath="dist\dist\bz2.pyd" SelfReg="false" NextFile="library.zip"/>
-    <ROW File="client.jar" Component_="javawebsock.cmd" FileName="Office~1.jar|OfficeDriveClient.jar" Attributes="0" SourcePath="..\..\Downloads\OfficeDriveClient.jar" SelfReg="false" NextFile="OfficeDrive.ddf"/>
-    <ROW File="curl.exe" Component_="curl.exe" FileName="curl.exe" Attributes="0" SourcePath="dist\curl.exe" SelfReg="false" NextFile="OfficeDriveClient.exe" DigSign="true"/>
-    <ROW File="kill.exe" Component_="kill.exe" FileName="kill.exe" Attributes="0" SourcePath="dist\kill.exe" SelfReg="false" NextFile="curl.exe" DigSign="true"/>
-    <ROW File="libcrypto.dll" Component_="libcrypto.dll" FileName="libcry~1.dll|libcrypto.dll" Attributes="0" SourcePath="dist\libcrypto.dll" SelfReg="false" NextFile="kill.exe"/>
-    <ROW File="libcurl4.dll" Component_="libcurl4.dll" FileName="libcur~1.dll|libcurl-4.dll" Attributes="0" SourcePath="dist\libcurl-4.dll" SelfReg="false" NextFile="libcrypto.dll"/>
-    <ROW File="library.zip" Component_="bz2.pyd" FileName="library.zip" Attributes="0" SourcePath="dist\dist\library.zip" SelfReg="false" NextFile="python27.dll"/>
-    <ROW File="libssl.dll" Component_="libssl.dll" FileName="libssl.dll" Attributes="0" SourcePath="dist\libssl.dll" SelfReg="false" NextFile="libcurl4.dll"/>
-    <ROW File="npOfficeDrive.so.dll" Component_="npOfficeDrive.so.dll" FileName="npOffi~1.dll|npOfficeDrive.so.dll" Attributes="0" SourcePath="..\..\..\..\home\simon\src\firebreath-dev\build\bin\OfficeDrive\Debug\npOfficeDrive.dll" SelfReg="true" NextFile="client.jar" DigSign="true"/>
-    <ROW File="python27.dll" Component_="python27.dll" FileName="python27.dll" Attributes="0" SourcePath="dist\dist\python27.dll" SelfReg="false" NextFile="select.pyd"/>
-    <ROW File="select.pyd" Component_="bz2.pyd" FileName="select.pyd" Attributes="0" SourcePath="dist\dist\select.pyd" SelfReg="false" NextFile="unicodedata.pyd"/>
-    <ROW File="unicodedata.pyd" Component_="bz2.pyd" FileName="unicod~1.pyd|unicodedata.pyd" Attributes="0" SourcePath="dist\dist\unicodedata.pyd" SelfReg="false" NextFile="Update.exe_1"/>
-    <ROW File="w9xpopen.exe" Component_="w9xpopen.exe" FileName="w9xpopen.exe" Attributes="0" SourcePath="dist\dist\w9xpopen.exe" SelfReg="false" NextFile="_ctypes.pyd" DigSign="true"/>
+    <ROW File="OfficeDriveLauncher.cmd" Component_="javawebsock.cmd" FileName="Office~1.cmd|OfficeDriveLauncher.cmd" Attributes="0" SourcePath="OfficeDriveLauncher.cmd" SelfReg="false" NextFile="OfficeDriveClient.exe"/>
+    <ROW File="client.jar" Component_="javawebsock.cmd" FileName="Office~1.jar|OfficeDriveClient.jar" Attributes="0" SourcePath="OfficeDriveClient.jar" SelfReg="false" NextFile="OfficeDrive.ddf"/>
+    <ROW File="npOfficeDrive.so.dll" Component_="npOfficeDrive.so.dll" FileName="npOffi~1.dll|npOfficeDrive.so.dll" Attributes="0" SourcePath="..\firebreath-dev\build\bin\OfficeDrive\MinSizeRel\npOfficeDrive.dll" SelfReg="true" NextFile="client.jar" DigSign="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild_1" BuildName="MinRel" BuildOrder="3" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="OfficeDriveClient.exe" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true"/>
     <ROW BuildKey="Win32_Debug" BuildName="Win32_Debug" BuildOrder="2" BuildType="0" PackageFolder="Win32_DebugSetupFiles" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
     <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
   </COMPONENT>
@@ -112,7 +85,7 @@
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
-    <ROW DigitalCertificate="..\..\Downloads\code signing cert simon 2.pfx" TimeStampUrl="http://timestamp.verisign.com/scripts/timstamp.dll" SignerDescription="OfficeDrive Certified browser plugin" DescriptionUrl="http://www.officedrive.net" SignOptions="7" SignTool="0" Password="7099B7A4D193EB035D80F553EF42"/>
+    <ROW DigitalCertificate="code signing cert simon 2.pfx" TimeStampUrl="http://timestamp.verisign.com/scripts/timstamp.dll" SignerDescription="OfficeDrive Certified browser plugin" DescriptionUrl="http://www.officedrive.net" SignOptions="7" SignTool="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
@@ -129,6 +102,10 @@
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
     <ROW Action="AI_XmlCommit" Description="Committing XML file configurations." Template="Committing XML file configurations." DescriptionLocId="ActionText.Description.AI_XmlCommit" TemplateLocId="ActionText.Template.AI_XmlCommit"/>
     <ROW Action="AI_XmlConfig" Description="Executing XML file configurations" Template="Configuring XML file: &quot;[1]&quot;" DescriptionLocId="ActionText.Description.AI_XmlConfig" TemplateLocId="ActionText.Template.AI_XmlConfig"/>
     <ROW Action="AI_XmlInstall" Description="Generating actions to configure XML files" DescriptionLocId="ActionText.Description.AI_XmlInstall"/>
@@ -136,10 +113,15 @@
     <ROW Action="AI_XmlRollback" Description="Rolling back XML file configurations." Template="Rolling back XML file configurations." DescriptionLocId="ActionText.Description.AI_XmlRollback" TemplateLocId="ActionText.Template.AI_XmlRollback"/>
     <ROW Action="AI_XmlUninstall" Description="Generating actions to configure XML files" DescriptionLocId="ActionText.Description.AI_XmlUninstall"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild_1"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild_1"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
     <ROW Name="xmlCfg.dll" SourcePath="&lt;AI_CUSTACTS&gt;xmlCfg.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
@@ -185,9 +167,19 @@
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DATA_SETTER_2" Type="51" Source="CustomActionData" Target="[~]"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
     <ROW Action="AI_DoRemoveExternalUIStub" Type="3585" Source="ExternalUICleaner.dll" Target="DoRemoveExternalUIStub" WithoutSeq="true"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER_1"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
     <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#OfficeDriveClient.exe]"/>
@@ -205,12 +197,12 @@
     <ROW Action="AI_XmlRemove" Type="11265" Source="xmlCfg.dll" Target="OnXmlRemove" WithoutSeq="true"/>
     <ROW Action="AI_XmlRollback" Type="11521" Source="xmlCfg.dll" Target="OnXmlRollback" WithoutSeq="true"/>
     <ROW Action="AI_XmlUninstall" Type="1" Source="xmlCfg.dll" Target="OnXmlUninstall" AdditionalSeq="AI_DATA_SETTER_2"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[LocalAppDataFolder]#Win32_Debug:[LocalAppDataFolder]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[LocalAppDataFolder]#Win32_Debug:[LocalAppDataFolder]#DefaultBuild_1:[LocalAppDataFolder]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="logoofficedrivelightbeveled64.exe" SourcePath="..\..\..\..\home\simon\src\firebreath-dev\projects\officedrive\logo officedrive light beveled64.ico" Index="0"/>
+    <ROW Name="logoofficedrivelightbeveled64.exe" SourcePath="..\firebreath-dev\projects\officedrive\logo officedrive light beveled64.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIniFileComponent">
     <ROW IniFile="AdvancedINF" FileName="Office~1.inf|OfficeDrive.inf" DirProperty="OfficeDrive_Dir" Section="1.0.0.0" Key="AdvancedINF" Value="2.0" Action="0" Component_="npOfficeDrive.so.dll"/>
@@ -228,11 +220,23 @@
     <ROW Action="AI_GetArpIconPath" Sequence="51"/>
     <ROW Action="AI_RemoveExternalUIStub" Condition="(REMOVE=&quot;ALL&quot;) AND ((VersionNT &gt; 500) OR((VersionNT = 500) AND (ServicePackLevel &gt;= 4)))" Sequence="1501"/>
     <ROW Action="InstallFinalize" Sequence="6599" SeqType="0" MsiKey="InstallFinalize"/>
-    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
     <ROW Action="AI_XmlInstall" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5102"/>
     <ROW Action="AI_DATA_SETTER" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5101"/>
     <ROW Action="AI_XmlUninstall" Condition="(REMOVE)" Sequence="3102"/>
     <ROW Action="AI_DATA_SETTER_2" Condition="(REMOVE)" Sequence="3101"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (NOT PATCH)" Sequence="6598" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild_1"/>
+    <ROW Action="AI_DATA_SETTER_1" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="748"/>
@@ -243,9 +247,14 @@
     <ROW Action="AI_AppSearchEx" Sequence="101"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
-    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;Win32_Debug"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;Win32_Debug;DefaultBuild_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
     <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
     <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
     <ROW Registry="Description" Root="-1" Key="Software\MozillaPlugins\@officedrive.net/OfficeDrive;version=1" Name="Description" Value="OfficeDrive NPAPI Plugin" Component_="Description"/>

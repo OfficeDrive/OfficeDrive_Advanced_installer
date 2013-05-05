@@ -7,14 +7,15 @@ odPath = os.path.join(os.environ.get("LOCALAPPDATA",""), "OfficeDrive")
 localJarPath = os.path.join(odPath, jar)
 pidFile = os.path.join(odPath, "pidfile")
 pid = 0
-codeBase = "https://websockettest.officedrive.net/#codeBase"
+# codeBase = "https://websockettest.officedrive.net/#codeBase"
 updateUrl = "https://websockettest.officedrive.net/plugin/OfficeDriveClient.jar"
 
-
+""" 
 if len(sys.argv) > 1:
 	codeBase = sys.argv[1]
-	protocol, sep, hostName = codeBase.split("/")[0:3]
-	if protocol.startswith("http"):
+	
+	if codeBase.startswith("http"):
+            protocol, sep, hostName = codeBase.split("/")[0:3]
 	    updateUrl = "%s//%s/plugin/OfficeDriveClient.jar" %(protocol, hostName)
 	else:
 		updateUrl = "https://websockettest.officedrive.net/plugin/OfficeDriveClient.jar"
@@ -45,6 +46,7 @@ if pid:
             pass
     #if not ret:
     #sys.exit(-1)
+"""
 
 cmd = subprocess.Popen(["curl.exe", "-k", "-o", localJarPath, updateUrl] , stdout=subprocess.PIPE)
 

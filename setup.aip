@@ -4,12 +4,12 @@
     <ROW Name="HiddenItems" Value="UpdaterComponent;SerValComponent;MsiServInstComponent;MsiOrgComponent;ActSyncAppComponent;BackgroundImagesComponent;DictionaryComponent;CPLAppletComponent;WebApplicationsComponent;MsiOdbcDataSrcComponent;MsiAppSearchComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
-    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui#Win32_Debug:aiui#DefaultBuild_1:aiui"/>
+    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui#Win32_Debug:aiui#DefaultBuild_1:aiui#MinRel_1:aiui"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_PRODUCTNAME_ARP" Value="[|ProductName]"/>
-    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:style21#DefaultBuild_1:style21" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:style21#DefaultBuild_1:style21#MinRel_1:style21" MsiKey="AI_ThemeStyle"/>
     <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
-    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:#DefaultBuild_1:"/>
+    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:#DefaultBuild_1:#MinRel_1:"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPHELPLINK" Value="http://www.officedrive.net/support"/>
     <ROW Property="ARPNOMODIFY" Value="1"/>
@@ -19,10 +19,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="http://www.officedrive.net"/>
     <ROW Property="ARPURLUPDATEINFO" Value="https://www.officedrive.net/update"/>
     <ROW Property="CTRLS" Value="2"/>
-    <ROW Property="LIMITUI" Value="1" MultiBuildValue="DefaultBuild:#DefaultBuild_1:"/>
-    <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:1#DefaultBuild_1:1"/>
+    <ROW Property="LIMITUI" Value="1" MultiBuildValue="DefaultBuild:#DefaultBuild_1:#MinRel_1:"/>
+    <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:1#DefaultBuild_1:1#MinRel_1:1"/>
     <ROW Property="Manufacturer" Value="OfficeDrive.net"/>
-    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:v#DefaultBuild_1:v"/>
+    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:v#DefaultBuild_1:v#MinRel_1:v"/>
     <ROW Property="ProductCode" Value="1033:{E4C358F5-E5C0-4B49-8BAF-53F256F779F1} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="OfficeDrive browser plugin"/>
@@ -30,8 +30,8 @@
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{97A6B370-9AEA-4996-A830-F8D9F45D2A43}"/>
-    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME#DefaultBuild_1:Windows 9x/ME" ValueLocId="-"/>
-    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME#DefaultBuild_1:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME#DefaultBuild_1:Windows 9x/ME#MinRel_1:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#Win32_Debug:Windows 9x/ME#DefaultBuild_1:Windows 9x/ME#MinRel_1:Windows 9x/ME" ValueLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
@@ -62,7 +62,7 @@
     <ROW Component="regid.201302.net.officedrive" ComponentId="{24CAB0A3-4973-4C1F-88E9-E777CBA2F3A0}" Directory_="regid.201302.net.officedrive_Dir" Attributes="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="Feature" Title="Feature" Description="Description" Display="3" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_DisableModify"/>
+    <ROW Feature="Feature" Title="Feature" Description="Description" Display="3" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_DisableModify AI_ExePath APPDIR Description MimeTypes OfficeDrive OfficeDriveClient.exe Path ProductInformation ProductName Vendor Version applicationxOfficeDrive javawebsock.cmd npOfficeDrive.so.dll regid.201302.net.officedrive"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
@@ -76,9 +76,10 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
-    <ROW BuildKey="DefaultBuild_1" BuildName="MinRel" BuildOrder="3" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="OfficeDriveClient.exe" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild_1" BuildName="MinRel_EXE" BuildOrder="3" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="OfficeDriveClient.exe" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true"/>
+    <ROW BuildKey="MinRel_1" BuildName="MinRel_MSI" BuildOrder="4" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
     <ROW BuildKey="Win32_Debug" BuildName="Win32_Debug" BuildOrder="2" BuildType="0" PackageFolder="Win32_DebugSetupFiles" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
-    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -197,7 +198,7 @@
     <ROW Action="AI_XmlRemove" Type="11265" Source="xmlCfg.dll" Target="OnXmlRemove" WithoutSeq="true"/>
     <ROW Action="AI_XmlRollback" Type="11521" Source="xmlCfg.dll" Target="OnXmlRollback" WithoutSeq="true"/>
     <ROW Action="AI_XmlUninstall" Type="1" Source="xmlCfg.dll" Target="OnXmlUninstall" AdditionalSeq="AI_DATA_SETTER_2"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[LocalAppDataFolder]#Win32_Debug:[LocalAppDataFolder]#DefaultBuild_1:[LocalAppDataFolder]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[LocalAppDataFolder]#Win32_Debug:[LocalAppDataFolder]#DefaultBuild_1:[LocalAppDataFolder]#MinRel_1:[LocalAppDataFolder]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
@@ -247,7 +248,7 @@
     <ROW Action="AI_AppSearchEx" Sequence="101"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
-    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;Win32_Debug;DefaultBuild_1"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;Win32_Debug;DefaultBuild_1;MinRel_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
     <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>

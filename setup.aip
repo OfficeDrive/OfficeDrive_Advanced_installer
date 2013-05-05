@@ -75,8 +75,8 @@
     <ROW File="npOfficeDrive.so.dll" Component_="npOfficeDrive.so.dll" FileName="npOffi~1.dll|npOfficeDrive.so.dll" Attributes="0" SourcePath="..\firebreath-dev\build\bin\OfficeDrive\MinSizeRel\npOfficeDrive.dll" SelfReg="true" NextFile="client.jar" DigSign="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
-    <ROW BuildKey="DefaultBuild_1" BuildName="MinRel_EXE" BuildOrder="3" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="OfficeDriveClient.exe" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Default Build Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild_1" BuildName="MinRel_EXE" BuildOrder="3" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="OfficeDriveClient.exe" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="OfficeDrive_Installer"/>
     <ROW BuildKey="MinRel_1" BuildName="MinRel_MSI" BuildOrder="4" BuildType="0" PackageFolder="Setup Files" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
     <ROW BuildKey="Win32_Debug" BuildName="Win32_Debug" BuildOrder="2" BuildType="0" PackageFolder="Win32_DebugSetupFiles" PackageFileName="OfficeDrive_Installer" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
     <ATTRIBUTE name="CurrentBuild" value="DefaultBuild_1"/>
